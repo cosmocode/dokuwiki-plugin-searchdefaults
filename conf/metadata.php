@@ -6,5 +6,5 @@
  */
 
 
-//$meta['fixme'] = array('string');
+$meta['default_sort'] = ['multichoice', '_choices' => ['hits', 'mtime']];
 

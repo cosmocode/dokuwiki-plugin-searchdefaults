@@ -5,4 +5,4 @@
  * @author Michael Große <dokuwiki@cosmocode.de>
  */
 
-//$conf['fixme']    = 'FIXME';
+$conf['default_sort']    = 'hits';

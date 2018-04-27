@@ -18,23 +18,23 @@ class action_plugin_searchdefaults extends DokuWiki_Action_Plugin {
      * @return void
      */
     public function register(Doku_Event_Handler $controller) {
-
-       $controller->register_hook('FORM_QUICKSEARCH_OUTPUT', 'FIXME', $this, 'handle_form_quicksearch_output');
-   
+       $controller->register_hook('FORM_QUICKSEARCH_OUTPUT', 'BEFORE', $this, 'handle_form_quicksearch_output');
     }
 
     /**
-     * [Custom event handler which performs action]
+     * Handles the FORM_QUICKSEARCH_OUTPUT event
      *
      * @param Doku_Event $event  event object by reference
      * @param mixed      $param  [the parameters passed as fifth argument to register_hook() when this
      *                           handler was registered]
      * @return void
      */
-
-    public function handle_form_quicksearch_output(Doku_Event &$event, $param) {
+    public function handle_form_quicksearch_output(Doku_Event $event, $param) {
+        /** @var \dokuwiki\Form\Form $qsearchForm */
+        $qsearchForm = $event->data;
+        if ($this->getConf('default_sort') === 'mtime') {
+            $qsearchForm->setHiddenField('srt', 'mtime');
+        }
     }
 
 }
-
-// vim:ts=4:sw=4:et:
