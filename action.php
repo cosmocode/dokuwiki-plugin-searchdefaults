@@ -35,6 +35,9 @@ class action_plugin_searchdefaults extends DokuWiki_Action_Plugin {
         if ($this->getConf('default_sort') === 'mtime') {
             $qsearchForm->setHiddenField('srt', 'mtime');
         }
+        if ($this->getConf('default_time_limit') !== 'any') {
+            $qsearchForm->setHiddenField('min', '1 ' . $this->getConf('default_time_limit') . ' ago');
+        }
     }
 
 }

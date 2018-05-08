@@ -6,3 +6,4 @@
  */
 
 $conf['default_sort']    = 'hits';
+$conf['default_time_limit']    = 'any';
