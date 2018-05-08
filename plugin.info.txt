@@ -1,7 +1,7 @@
 base   searchdefaults
 author Michael Große
 email  dokuwiki@cosmocode.de
-date   2018-04-27
+date   2018-05-08
 name   searchdefaults plugin
 desc   Offers some more ways to configure the default search behaviour
 url    https://www.dokuwiki.org/plugin:searchdefaults
